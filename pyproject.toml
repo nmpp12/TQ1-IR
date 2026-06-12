@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tq1ir"
+version = "0.2.1"
+description = "A compiler dialect for ternary weight neural networks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Nuno Miguel Pedrosa Pombo" },
+]
+keywords = [
+    "compiler",
+    "intermediate-representation",
+    "ternary",
+    "bitnet",
+    "quantization",
+    "ml-systems",
+    "ssa",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: System :: Hardware",
+]
+dependencies = [
+    "numpy>=1.20",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.urls]
+Repository = "https://github.com/Nuno-Pombo/tq1-ir"
+Issues     = "https://github.com/Nuno-Pombo/tq1-ir/issues"
+Paper      = "https://github.com/Nuno-Pombo/tq1-ir/blob/main/docs/paper.pdf"
+
+# Layout "flat at root": o `__init__.py` do package vive no repo root.
+# Por isso temos de mapear cada subpackage explicitamente.
+[tool.setuptools]
+packages = [
+    "tq1ir",
+    "tq1ir.frontend",
+    "tq1ir.passes",
+    "tq1ir.backend",
+]
+
+[tool.setuptools.package-dir]
+"tq1ir"          = "."
+"tq1ir.frontend" = "frontend"
+"tq1ir.passes"   = "passes"
+"tq1ir.backend"  = "backend"
+
+[tool.setuptools.exclude-package-data]
+"*" = ["tests/*", "docs/*", "__pycache__/*", "*.pyc"]
