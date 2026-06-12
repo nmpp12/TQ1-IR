@@ -45,9 +45,9 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Nuno-Pombo/tq1-ir"
-Issues     = "https://github.com/Nuno-Pombo/tq1-ir/issues"
-Paper      = "https://github.com/Nuno-Pombo/tq1-ir/blob/main/docs/paper.pdf"
+Repository = "https://github.com/nmpp12/tq1-ir"
+Issues     = "https://github.com/nmpp12/tq1-ir/issues"
+Paper      = "https://github.com/nmpp12/tq1-ir/blob/main/docs/paper.pdf"
 
 # Layout "flat at root": o `__init__.py` do package vive no repo root.
 # Por isso temos de mapear cada subpackage explicitamente.
